@@ -17,7 +17,7 @@ defmodule Mix.Tasks.Crawlex do
     end
   end
 
-  def ccr_of_a_file(file_path) do
+  defp ccr_of_a_file(file_path) do
     case File.read(file_path) do
       {:ok, _} ->
         lines = Crawlex.get_total_line_of_codes(file_path)
