@@ -1,4 +1,5 @@
 defmodule Mix.Tasks.Crawlex do
+  @moduledoc false
   use Mix.Task
 
   @shortdoc "Calculate comment-to-code ratio of a given path."
