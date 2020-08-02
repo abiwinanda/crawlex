@@ -6,7 +6,7 @@ defmodule Crawlex do
   @doc false
   def gen_report(path \\ "lib") do
     IO.puts("----------------")
-    IO.puts("RATIO\t   FILE\t\t\t\t\t\t   LINES   COMMENTS")
+    IO.puts("RATIO\tFILE\t\t\t\t\t\tLINES\tCOMMENTS")
 
     calc_report_data_under_path(path)
     |> Enum.each(fn {file_path, ccr, total_codes, total_comments} ->
@@ -141,6 +141,9 @@ defmodule Crawlex do
     |> length()
   end
 
+  @doc false
+  def float_to_percentage(float), do: :erlang.float_to_binary(float * 100, decimals: 1) <> "%"
+
   #########################
   #         HELPERS       #
   #########################
@@ -171,8 +174,6 @@ defmodule Crawlex do
       acc + upper - lower - 1
     end)
   end
-
-  defp float_to_percentage(float), do: :erlang.float_to_binary(float * 100, decimals: 1) <> "%"
 
   defp is_folder?(path), do: Path.extname(path) == ""
 
