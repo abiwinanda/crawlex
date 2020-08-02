@@ -5,7 +5,7 @@ defmodule Crawlex.MixProject do
 
   def project do
     [
-      app: :fictitious,
+      app: :crawlex,
       version: @version,
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
