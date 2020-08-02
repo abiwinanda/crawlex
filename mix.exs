@@ -5,7 +5,7 @@ defmodule Crawlex.MixProject do
 
   def project do
     [
-      app: :fictitious,
+      app: :crawlex,
       version: @version,
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
@@ -27,6 +27,9 @@ defmodule Crawlex.MixProject do
       # These are the default files included in the package
       maintainers: ["Nyoman Abiwinanda"],
       files: [
+        "lib/mix/tasks/crawlex.ex",
+        "lib/crawlex.ex",
+        "lib/formatter.ex",
         "mix.exs",
         "LICENSE.md",
         "README.md",
